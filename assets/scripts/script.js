@@ -43,14 +43,15 @@ setmyQuiz();
 
 // FUNCTION CALLS
 // questionAnswer = 0;
-function nextQuestion(answerSelect)
-
+function nextQuestion(answerSelected)
+{
+  correctAnswer = myQuizArray[questionNumber].correct;
   document.getElementById("my-quiz").innerHTML = myQuizArray[questionNumber].question;
   document.getElementById("answer0").innerHTML = myQuizArray[questionNumber].answers[0];
   document.getElementById("answer1").innerHTML = myQuizArray[questionNumber].answers[1];
   document.getElementById("answer2").innerHTML = myQuizArray[questionNumber].answers[2];
   document.getElementById("answer3").innerHTML = myQuizArray[questionNumber].answers[3];
-  document.getElementById("result").innerHTML = questionNumber + ":"+ answerSelected;
+  document.getElementById("result").innerHTML = questionNumber + ":"+ answerSelected + ":" + correctAnswer;
   // questionAnswer++;
   questionNumber++;
 
