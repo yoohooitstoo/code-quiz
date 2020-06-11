@@ -55,7 +55,14 @@ function nextQuestion(answerSelected)
   document.getElementById("answer1").innerHTML = myQuizArray[questionNumber].answers[1];
   document.getElementById("answer2").innerHTML = myQuizArray[questionNumber].answers[2];
   document.getElementById("answer3").innerHTML = myQuizArray[questionNumber].answers[3];
-  document.getElementById("result").innerHTML = questionNumber + ":"+ answerSelected + ":" + correctAnswer;
+
+  result = "Wrong!";
+  if(answerSelected === correctAnswer)
+  {
+    result = "Correct!";
+  }
+  document.getElementById("result").innerHTML = result; //
+  // setTimeout(function() {document.getElementById("result").innerHTML="";}, 3000)
   // questionAnswer++;
   questionNumber++;
 
