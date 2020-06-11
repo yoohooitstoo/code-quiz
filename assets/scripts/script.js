@@ -1,8 +1,10 @@
 // DEFINE VARIABLES
+var questionNumber = 0;
+
 var myQuizArray = [{
     question: "Commonly used data types DO NOT include",
     answers: ["strings", "booleans", "numbers", "alerts"],
-    correctAnswer: 3
+    correctAnswer: 4
   },
   {
     question: "The condition in an if / else statement is enclosed within________",
@@ -34,25 +36,32 @@ console.log(myQuizArray);
 // DEFINE FUNCTIONS
 function setmyQuiz() {
   // Use DOM Manipulation to take an array and put it on the page
-  document.getElementById("my-quiz").innerHTML = myQuizArray[0].question;
+  nextQuestion();
 }
 
 setmyQuiz();
 
 // FUNCTION CALLS
-questionNumber = 0;
-function nextQuestion()
-{
+// questionAnswer = 0;
+function nextQuestion(answerSelect)
+
   document.getElementById("my-quiz").innerHTML = myQuizArray[questionNumber].question;
+  document.getElementById("answer0").innerHTML = myQuizArray[questionNumber].answers[0];
+  document.getElementById("answer1").innerHTML = myQuizArray[questionNumber].answers[1];
+  document.getElementById("answer2").innerHTML = myQuizArray[questionNumber].answers[2];
+  document.getElementById("answer3").innerHTML = myQuizArray[questionNumber].answers[3];
+  document.getElementById("result").innerHTML = questionNumber + ":"+ answerSelected;
+  // questionAnswer++;
   questionNumber++;
 
 }
 
 
 // EVENT LISTENERS
-document.getElementById("next").addEventListener("click", nextQuestion)
-
-
+document.getElementById("answer0").addEventListener("click", function(e) {nextQuestion(0)});
+document.getElementById("answer1").addEventListener("click", function(e) {nextQuestion(1)});
+document.getElementById("answer2").addEventListener("click", function(e) {nextQuestion(2)});
+document.getElementById("answer3").addEventListener("click", function(e) {nextQuestion(3)});
 
 
 
