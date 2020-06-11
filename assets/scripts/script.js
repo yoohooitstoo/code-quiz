@@ -1,5 +1,7 @@
 // DEFINE VARIABLES
 var questionNumber = 0;
+var timeLeft = 100;
+
 
 var myQuizArray = [{
     question: "Commonly used data types DO NOT include",
@@ -61,8 +63,13 @@ function nextQuestion(answerSelected)
   {
     result = "Correct!";
   }
+  else
+  {
+    result = "Wrong!"
+    timeLeft = timeLeft - 15;
+  }
   document.getElementById("result").innerHTML = result; //
-  // setTimeout(function() {document.getElementById("result").innerHTML="";}, 3000)
+  setTimeout(function() {document.getElementById("result").innerHTML="";}, 500)
   // questionAnswer++;
   questionNumber++;
 
@@ -76,6 +83,42 @@ document.getElementById("answer2").addEventListener("click", function(e) {nextQu
 document.getElementById("answer3").addEventListener("click", function(e) {nextQuestion(3)});
 
 
+var downloadTimer = setInterval(function()
+{
+  if(timeLeft <= 0){
+    clearInterval(downloadTimer);
+    document.getElementById("timer").innerHTML = "Finished";
+  } else {
+    document.getElementById("timer").innerHTML = timeLeft + " seconds remaining";
+  }
+  timeLeft -= 1;
+}, 1000);
+
+
+/*var startTimer = document.querySelector("#startTimer");
+var timeEl = document.querySelector("#timer");
+var secondsLeft = 75;
+function setTime() {
+  startTimer.addEventListener("click", function () {
+      mainPage.style.display = "none";
+      myQuizArray.style.display = "block";
+  
+    var timerInterval = setInterval(function() {
+      secondsLeft--;
+      timeEl.textContent = secondsLeft;
+  
+      if(secondsLeft === 0) {
+        clearInterval(timerInterval);
+      }
+    }, 1000);
+  });
+}*/
+  
+  //myQuizArray.addEventListener("clicks", function {
+  //    myQuizArray.style.display = "none";
+  //});
+  
+  setTime();
 
 
 // for (var i = 0; i, myQuiz.length; i++) {
