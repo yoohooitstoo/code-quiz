@@ -4,27 +4,27 @@ var questionNumber = 0;
 var myQuizArray = [{
     question: "Commonly used data types DO NOT include",
     answers: ["strings", "booleans", "numbers", "alerts"],
-    correctAnswer: 4
+    correctAnswer: 3
   },
   {
     question: "The condition in an if / else statement is enclosed within________",
     answers: ["quotes", "curly brackets", "parentheses", "square brackets"],
-    correct: 2
+    correctAnswer: 1
   },
   {
     question: "Arrays in JavaScript can be used to store_____",
     answers: ["numbers and strings", "other arrays", "booleans", "all of the above"],
-    correct: 4
+    correctAnswer: 3
   },
   {
     question: "String values must be enclosed within _______ when being assigned to variables",
     answers: ["commas", "curly brackets", "quotes", "parentheses"],
-    correct: 3
+    correctAnswer: 2
   },
   {
     question: "A very useful tool used during development and debugging for printing content to the debugger is: ",
     answers: ["JavaScript", "terminal/bash", "for loops", "console.log"],
-    correct: 4
+    correctAnswer: 3
   },
 ];
 console.log(myQuizArray);
@@ -45,7 +45,11 @@ setmyQuiz();
 // questionAnswer = 0;
 function nextQuestion(answerSelected)
 {
-  correctAnswer = myQuizArray[questionNumber].correct;
+  correctAnswer = -1;
+  if(questionNumber!=0)
+  {
+    correctAnswer = myQuizArray[questionNumber-1].correctAnswer;
+  }
   document.getElementById("my-quiz").innerHTML = myQuizArray[questionNumber].question;
   document.getElementById("answer0").innerHTML = myQuizArray[questionNumber].answers[0];
   document.getElementById("answer1").innerHTML = myQuizArray[questionNumber].answers[1];
