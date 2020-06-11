@@ -52,3 +52,5 @@ var myQuiz = [
       correctAnswer: 4
     },
   ];
+
+  console.log(myQuiz);
