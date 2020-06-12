@@ -10,31 +10,81 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
 </head>
-<header class="header">
-    <div class="container">
-        <div class="row justify-content-md-center">
-            <div class="logo">Highscore:</div>
-            <div class="col-md-4">
-                <div class="score">Time:<span id="timer"></span></div>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="row ">
+                <div class="col-md-3">
+                    <div class="highscore">Highscore:</div>
+                </div>
+                <div class="col-sm-9">
+                    <div class="score">Time:<span id="timer"></span></div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="main-page">
+        <div class="container">
+            <div class="row justify-content-md-center">
+                <h1 id="title">
+                    CODE QUIZ CHALLENGE
+                </h1>
+                <p>
+                    Try to answer following code-related questions within time
+                    limit. Keep in mind that incorrect answers will penalize your
+                    score/time by fifteen seconds.
+                </p>
+                <div class="row justify-content-md-center">
+                    <button type="button" class="btn btn-success">
+                        START
+                    </button>
+                </div>
             </div>
         </div>
     </div>
-</header>
-
-<body>
     <div class="container">
-        <div class="row justify-content-md-center">
-            <h1 id="mainPage" >CODE QUIZ</h1>
-            <!-- <button type="button" class="btn btn-primary" id="startTimer">0</button></p> -->
-        </div>
         <div id="my-quiz"></div>
         <p><button type="button" class="btn btn-primary" id="answer0">0</button></p>
         <p><button type="button" class="btn btn-primary" id="answer1">1</button></p>
         <p><button type="button" class="btn btn-primary" id="answer2">2</button></p>
         <p><button type="button" class="btn btn-primary" id="answer3">3</button></p>
-        <hr>
-        <div id="result"></div>
-
+        <hr>   
+         <div id="result"></div>
+    </div>
+    <div class="container">
+        <div class="row justify-content-md-center">
+            <div class="col-sm-">
+                <h2 class="all-done">
+                    ALL DONE
+                </h2>
+                <P>YOUR FINAL SCORE IS: <span class="finalScore"></span></P>
+                <div class="user-input">
+                    <form class="userInfo">
+                        <span>Enter Initials</span>
+                        <input class="user-name" type="text"/>
+                        <button type="button" class="btn btn-primary btn-sm">SUBMIT</button>   
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row justify-content-md-center">
+            <div class="col-sm-">
+                <h2 class="all-done">
+                    ALL DONE
+                </h2>
+                <P>YOUR FINAL SCORE IS: <span class="finalScore"></span></P>
+                <div class="user-input">
+                    <form class="userInfo">
+                        <span>Enter Initials</span>
+                        <input class="user-name" type="text"/>
+                        <button type="button" class="btn btn-primary btn-sm">SUBMIT</button>   
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
     <script src="assets/scripts/script.js"></script>
 </body>

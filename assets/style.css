@@ -1,3 +1,17 @@
 background {
     color: lightslategray;
 }
+
+#my-quiz {
+    text-align: center;
+    font-size: 25px;
+    color: #007a5a;
+}
+
+.highscore{
+    text-align: left;
+}
+
+.score {
+    text-align: right;
+}
