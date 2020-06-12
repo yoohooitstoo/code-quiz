@@ -1,8 +1,12 @@
 // DEFINE VARIABLES
+//the start position of the quiz
 var questionNumber = 0;
+//timer
 var timeLeft = 100;
+//where we will store the high score
+var highScores = [];
 
-
+//My array for Questions and answers will need to iterate through
 var myQuizArray = [{
     question: "Commonly used data types DO NOT include",
     answers: ["strings", "booleans", "numbers", "alerts"],
@@ -31,7 +35,8 @@ var myQuizArray = [{
 ];
 console.log(myQuizArray);
 
-
+// GIVEN I am taking a code quiz
+// WHEN I click the start button
 
 
 
@@ -45,6 +50,10 @@ setmyQuiz();
 
 // FUNCTION CALLS
 // questionAnswer = 0;
+//How we will display each question and the selections
+// THEN a timer starts and I am presented with a question
+// WHEN I answer a question
+// THEN I am presented with another question
 function nextQuestion(answerSelected)
 {
   correctAnswer = -1;
@@ -57,7 +66,9 @@ function nextQuestion(answerSelected)
   document.getElementById("answer1").innerHTML = myQuizArray[questionNumber].answers[1];
   document.getElementById("answer2").innerHTML = myQuizArray[questionNumber].answers[2];
   document.getElementById("answer3").innerHTML = myQuizArray[questionNumber].answers[3];
-
+//If a selection is incorrect notify user briefly and dock the timer 15 seconds
+// WHEN I answer a question incorrectly
+// THEN time is subtracted from the clock
   result = "Wrong!";
   if(answerSelected === correctAnswer)
   {
@@ -82,7 +93,7 @@ document.getElementById("answer1").addEventListener("click", function(e) {nextQu
 document.getElementById("answer2").addEventListener("click", function(e) {nextQuestion(2)});
 document.getElementById("answer3").addEventListener("click", function(e) {nextQuestion(3)});
 
-
+// A timer for the quiz
 var downloadTimer = setInterval(function()
 {
   if(timeLeft <= 0){
@@ -95,6 +106,42 @@ var downloadTimer = setInterval(function()
 }, 1000);
 
 
+// WHEN all questions are answered or the timer reaches 0
+// THEN the game is over
+// WHEN the game is over
+// THEN I can save my initials and score
+
+
+
+
+
+
+
+
+/*An idea for the local Storage
+  if (event.target.matches(".submit-button")) {
+    //Push timeLeft and initials into array. We use index 0 because it is the only input.
+    highScoresSaved.push({"initials":initialsEl[0].value, "score":timeLeft});
+    console.log(highScoresSaved)
+  //save timeLeft and initials in local storage
+  localStorage.setItem("highScores",JSON.stringify((highScoresSaved)));
+  questionSection.innerHTML = "";
+  renderHighScores();
+  }
+});
+function renderHighScores(){
+  var highScores = JSON.parse(localStorage.getItem("highScores"));
+  
+  for (var i = 0; i < highScores.length; i++) {
+    //create the element
+      var highScoresMessage = document.createElement("h3");
+      //add content
+      highScoresMessage.textContent = highScores[i].initials + " scored " + highScores[i].score;
+      //append to existing element
+      questionSection.append(highScoresMessage); */
+
+
+// A poorly functioning timer
 /*var startTimer = document.querySelector("#startTimer");
 var timeEl = document.querySelector("#timer");
 var secondsLeft = 75;
@@ -118,7 +165,7 @@ function setTime() {
   //    myQuizArray.style.display = "none";
   //});
   
-  setTime();
+
 
 
 // for (var i = 0; i, myQuiz.length; i++) {
@@ -132,22 +179,7 @@ function setTime() {
 
 
 
-// As you proceed in your career as a web developer, 
-// you will probably be asked to complete a coding assessment, 
-// which is typically a combination of multiple - choice questions 
-// and interactive challenges.Build a timed code quiz with multiple - 
-// choice questions.This app will run in the browser and feature 
-// dynamically updated HTML and CSS powered by your JavaScript code.
-// It will also feature a clean and polished user interface and be 
-// responsive, ensuring that it adapts to multiple screen sizes.
-// GIVEN I am taking a code quiz
-// WHEN I click the start button
-// THEN a timer starts and I am presented with a question
-// WHEN I answer a question
-// THEN I am presented with another question
-// WHEN I answer a question incorrectly
-// THEN time is subtracted from the clock
-// WHEN all questions are answered or the timer reaches 0
-// THEN the game is over
-// WHEN the game is over
-// THEN I can save my initials and score
+
+
+
+
