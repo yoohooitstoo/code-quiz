@@ -90,12 +90,13 @@ function nextQuestion(answerSelected) {
     document.getElementById("quiz-page").style.visibility = "hidden";
     document.getElementById("score-page").style.visibility = "visible";
     document.getElementById("highscore-page").style.visibility = "hidden";
+    clearTimeout(downloadTimer);
   }
 }
 
-
+var downloadTimer;
 function start() {
-  var downloadTimer = setInterval(function () {
+  downloadTimer = setInterval(function () {
     if (timeLeft <= 0) {
       clearInterval(downloadTimer);
       document.getElementById("timer").innerHTML = "Finished";
@@ -111,6 +112,12 @@ function start() {
 }
 
 // EVENT LISTENERS
+document.getElementById("submitButton").addEventListener("click", function(e){
+  document.getElementById("welcome-page").style.visibility = "hidden";
+  document.getElementById("quiz-page").style.visibility = "hidden";
+  document.getElementById("score-page").style.visibility = "hidden";
+  document.getElementById("highscore-page").style.visibility = "visible";
+});
 document.getElementById("startButton").addEventListener("click", function (e) {
   start();
 });
