@@ -24,7 +24,7 @@
             </div>
         </div>
     </header>
-    <div class="main-page">
+    <div class="container" id="welcome-page">
         <div class="container">
             <div class="row justify-content-md-center">
                 <h1 id="title">
@@ -36,14 +36,14 @@
                     score/time by fifteen seconds.
                 </p>
                 <div class="row justify-content-md-center">
-                    <button type="button" class="btn btn-success">
+                    <button type="button" class="btn btn-primary" id="startButton">
                         START
                     </button>
                 </div>
             </div>
         </div>
     </div>
-    <div class="container">
+    <div class="container" id="quiz-page">
         <div id="my-quiz"></div>
         <p><button type="button" class="btn btn-primary" id="answer0">0</button></p>
         <p><button type="button" class="btn btn-primary" id="answer1">1</button></p>
@@ -52,34 +52,38 @@
         <hr>
         <div id="result"></div>
     </div>
-    <div class="container">
-        <div class="row justify-content-md-center">
-            <div class="col-sm-">
-                <h2 class="all-done">
-                    ALL DONE
-                </h2>
-                <P>YOUR FINAL SCORE IS: <span class="finalScore"></span></P>
-                <div class="input-group mb-3">
-                    <input type="text" class="form-control" aria-label="Recipient's username" aria-describedby="button-addon2">
-                    <div class="input-group-append">
-                      <button class="btn btn-primary btn-sm" type="button" id="button-addon2">Button</button>
+    <div class="container" >
+        <div class="container" id="score-page">
+            <div class="row justify-content-md-center">
+                <div class="col-sm-">
+                    <h2 class="all-done">
+                        ALL DONE
+                    </h2>
+                    <P>YOUR FINAL SCORE IS: <span class="finalScore"></span></P>
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" aria-label="Recipient's username"
+                            aria-describedby="button-addon2">
+                        <div class="input-group-append">
+                            <button class="btn btn-primary btn-sm" type="button" id="button-addon2">Button</button>
+                        </div>
                     </div>
-                  </div>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="container">
-        <div class="row justify-content-md-center">
-            <div class="col-sm-4">
-                <h2 class="highscore">HIGHSCORE</h2>
-                <div class="final-page">
+        <div class="container" id="highscore-page" >
+            <div class="row justify-content-md-center">
+                <div class="col-sm-4">
+                    <h2 class="highscore">HIGHSCORE</h2>
+                    <div class="final-page">
                         <input class="highscore" type="text" readonly>
                         <button type="button" class="btn btn-primary btn-sm">GO BACK</button>
                         <button type="button" class="btn btn-primary btn-sm">CLEAR HIGHSCORES</button>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+    
     <script src="assets/scripts/script.js"></script>
 </body>
 
