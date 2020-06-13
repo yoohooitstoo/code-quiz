@@ -20,7 +20,7 @@
 
 ## Usage
 
-This Coding Quiz Application was build by using best practices of web development by using HTML, CSS, Bootstrap Library and JavaScript.
+This Coding Quiz Application was built by using best practices of web development by using HTML, CSS, Bootstrap Library and JavaScript.
 
 The animation below is a demonstration of how the quiz should function.
 
@@ -32,7 +32,9 @@ Other than conferring with TAs, tutors, and my peers; yes, This was a solo proje
 
 ## URL
 
-NEED TO ADD IN THE URL
+Follow the Link below to see the Quiz.
+
+https://yoohooitstoo.github.io/code-quiz/
 
 ## MIT_License 
 
