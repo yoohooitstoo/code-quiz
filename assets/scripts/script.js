@@ -40,8 +40,6 @@ var myQuizArray = [{
 ];
 console.log(myQuizArray);
 
-// GIVEN I am taking a code quiz
-// WHEN I click the start button
 
 
 
@@ -86,22 +84,29 @@ function nextQuestion(answerSelected) {
   // questionAnswer++;
   questionNumber++;
   if (questionNumber > 5) {
+    
+  // GIVEN I am taking a code quiz
+  // WHEN I click the start button
+
     document.getElementById("welcome-page").style.visibility = "hidden";
     document.getElementById("quiz-page").style.visibility = "hidden";
     document.getElementById("score-page").style.visibility = "visible";
     document.getElementById("highscore-page").style.visibility = "hidden";
     clearTimeout(downloadTimer);
+    if (timeLeft === 0)
+      document.getElementById("score-page").style.visibility = "visible";
   }
 }
 
 var downloadTimer;
+
 function start() {
   downloadTimer = setInterval(function () {
     if (timeLeft <= 0) {
       clearInterval(downloadTimer);
-      document.getElementById("timer").innerHTML = "Finished";
+      document.getElementById("timer").innerHTML = 0;
     } else {
-      document.getElementById("timer").innerHTML = timeLeft + " seconds remaining";
+      document.getElementById("timer").innerHTML = timeLeft;
     }
     timeLeft -= 1;
   }, 1000);
@@ -112,11 +117,14 @@ function start() {
 }
 
 // EVENT LISTENERS
-document.getElementById("submitButton").addEventListener("click", function(e){
+
+document.getElementById("submitButton").addEventListener("click", function (e) {
   document.getElementById("welcome-page").style.visibility = "hidden";
   document.getElementById("quiz-page").style.visibility = "hidden";
   document.getElementById("score-page").style.visibility = "hidden";
   document.getElementById("highscore-page").style.visibility = "visible";
+  highscore = document.getElementById("timer").innerText;
+  alert("finalScore " + highscore );
 });
 document.getElementById("startButton").addEventListener("click", function (e) {
   start();
@@ -133,7 +141,9 @@ document.getElementById("answer2").addEventListener("click", function (e) {
 document.getElementById("answer3").addEventListener("click", function (e) {
   nextQuestion(3)
 });
-
+document.getElementById("goBack").addEventListener("click", function (e) {
+  setmyQuiz();
+});
 // A timer for the quiz
 
 

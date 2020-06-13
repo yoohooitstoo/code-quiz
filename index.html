@@ -11,12 +11,12 @@
 
 </head>
 
-<body>
+<body class ="">
     <header class="header">
         <div class="container">
             <div class="row ">
                 <div class="col-md-3">
-                    <div class="highscore">Highscore:</div>
+                    <div id="highScoreHead">Highscore:</div>
                 </div>
                 <div class="col-sm-9">
                     <div class="score">Time:<span id="timer"></span></div>
@@ -64,7 +64,7 @@
                         <input type="text" class="form-control" aria-label="Recipient's username"
                             aria-describedby="button-addon2">
                         <div class="input-group-append">
-                            <button class="btn btn-primary btn-sm" type="button" id="submitButton">Button</button>
+                            <button class="btn btn-primary btn-sm" type="button" id="submitButton">SUBMIT</button>
                         </div>
                     </div>
                 </div>
@@ -73,11 +73,11 @@
         <div class="container" id="highscore-page" >
             <div class="row justify-content-md-center">
                 <div class="col-sm-4">
-                    <h2 class="highscore">HIGHSCORE</h2>
+                    <h2>HIGHSCORE</h2>
                     <div class="final-page">
-                        <input id="highScore" type="text" readonly>
-                        <button type="button" class="btn btn-primary btn-sm">GO BACK</button>
-                        <button type="button" class="btn btn-primary btn-sm">CLEAR HIGHSCORES</button>
+                        <input id="finalScore" type="text" readonly>
+                        <button type="button" class="btn btn-primary btn-sm" id = "goBack">GO BACK</button>
+                        <button type="button" class="btn btn-primary btn-sm" id="clearHistory" >CLEAR HIGHSCORES</button>
                     </div>
                 </div>
             </div>
