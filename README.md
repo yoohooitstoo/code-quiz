@@ -24,7 +24,7 @@ This Coding Quiz Application was build by using best practices of web developmen
 
 The animation below is a demonstration of how the quiz should function.
 
-![code quiz](./Assets/04-web-apis-homework-demo.gif)
+![code quiz](./assets/images/04-web-apis-homework-demo.gif)
 
 ## Credits
 

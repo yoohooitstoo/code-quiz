@@ -124,7 +124,7 @@ document.getElementById("submitButton").addEventListener("click", function (e) {
   document.getElementById("score-page").style.visibility = "hidden";
   document.getElementById("highscore-page").style.visibility = "visible";
   highscore = document.getElementById("timer").innerText;
-  alert("finalScore " + highscore );
+  document.getElementsByClassName("finalScore").innerText = highscore;
 });
 document.getElementById("startButton").addEventListener("click", function (e) {
   start();
